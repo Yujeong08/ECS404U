@@ -1,0 +1,2 @@
+abcdef
+this is a short text file

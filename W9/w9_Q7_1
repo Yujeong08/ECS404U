@@ -1,0 +1,23 @@
+.text
+addi $v0, $zero, 4 
+la $a0, M1 
+syscall 
+
+addi $v0, $zero, 5 # syscall 5 = read integere
+or $t0, $zero, $v0
+syscall
+
+addi $v0, $zero, 4
+la $a0, M2
+syscall 
+
+addi $v0,$zero, 1
+add $a0, $zero, $t0
+syscall
+
+addi $v0, $zero, 10 # Load the syscall to exit.
+syscall # Invoke the syscall to exit.
+
+.data
+M1: .asciiz "please enter an integer number:"
+M2: .asciiz "The number you entered was:"
